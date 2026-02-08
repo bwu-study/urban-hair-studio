@@ -1,0 +1,17 @@
+{
+  "global": {
+    "bgColor": {
+      "bg-white": {
+        "$type": "color",
+        "$value": "#ffffff",
+        "$description": "White bg"
+      }
+    }
+  },
+  "$themes": [],
+  "$metadata": {
+    "tokenSetOrder": [
+      "global"
+    ]
+  }
+}
