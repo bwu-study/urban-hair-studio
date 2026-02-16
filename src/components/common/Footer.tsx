@@ -1,3 +1,5 @@
+import { PHONE_NUMBER } from '@/utils/constants';
+
 const FooterLeft = () => {
   return (
     <div className='flex justify-between flex-col w-full md:w-[320px] h-[100%]'>
@@ -18,7 +20,7 @@ const FooterRight = () => {
       <div className='flex justify-between flex-col w-full md:w-[163.65px] h-[78.28px]'>
         <h5 className='text-[10px] font-bold'>INFOMATION</h5>
         <div className='text-[14px] text-[#79716B] whitespace-nowrap'>
-          <p>T.0507-1313-4572</p>
+          <p>T.{PHONE_NUMBER}</p>
           <p>Insta. @urbanhairstudio.official</p>
         </div>
       </div>
