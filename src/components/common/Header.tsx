@@ -1,7 +1,12 @@
 import logo from '@/assets/header/logo.svg';
+import openingBracket from '@/assets/header/openingBracket.svg';
+import closingBracket from '@/assets/header/closingBracket.svg';
+import x from '@/assets/header/x.svg';
+import hamburger from '@/assets/header/hamburger.svg';
 import calendar from '@/assets/header/calendar.svg';
 import { Link, useLocation } from 'react-router-dom';
 import { RESERVATION_URL } from '@/utils/constants';
+import { useEffect, useState } from 'react';
 
 const navItems: { name: string; path: string }[] = [
   { name: '홈', path: '/' },
@@ -13,9 +18,8 @@ const navItems: { name: string; path: string }[] = [
   { name: '공지사항', path: '/notice' },
 ];
 
-export const Header = () => {
+const DesktopHeader = () => {
   const location = useLocation();
-
   return (
     <header className='fixed top-0 left-0 right-0 h-[96px] flex px-[37px] items-center justify-between bg-white/[0.95] z-50'>
       <Link to='/'>
@@ -48,4 +52,70 @@ export const Header = () => {
       </nav>
     </header>
   );
+};
+
+const MobileHeader = () => {
+  const location = useLocation();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  return (
+    <>
+      <header className='fixed top-0 left-0 right-0 h-[59px] flex items-center justify-between p-[20px] bg-white z-50'>
+        <Link to='/'>
+          {location.pathname === '/' ? (
+            <h1>
+              <img src={logo} alt='Urban Hair Studio' className='block w-[86.72px] h-[35.83px]' />
+            </h1>
+          ) : (
+            <img src={openingBracket} alt='뒤로가기' className='block w-[24px] h-[24px]' />
+          )}
+        </Link>
+        <img src={isMenuOpen ? x : hamburger} alt='menu' className='block w-[24px] h-[24px] absolute right-[16px] cursor-pointer' onClick={() => setIsMenuOpen(!isMenuOpen)} />
+      </header>
+
+      {/* Mobile Menu */}
+      {isMenuOpen && (
+        <div className='fixed inset-0 bg-black/50 z-40' onClick={() => setIsMenuOpen(false)}>
+          <nav>
+            <ul className='absolute top-[59px] w-[100%] h-[calc(100vh-59px)] overflow-y-auto right-0 w-full bg-white flex flex-col items-start p-[20px] gap-[16px]'>
+              {navItems.map((item) => {
+                const isActive: boolean = location.pathname === item.path;
+
+                return (
+                  <li key={item.path} className='w-[100%] h-[59px]'>
+                    <Link
+                      to={item.path}
+                      className={`flex items-center justify-between w-[100%] h-[59px] text-[14px] leading-[59px] font-bold ${isActive ? 'text-[#1C1917]' : 'text-[#A6A09B]'}`}
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      <p>{item.name}</p>
+                      <img src={closingBracket} alt='moveIcon' className='block w-[24px] h-[24px]' />
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+          </nav>
+        </div>
+      )}
+    </>
+  );
+};
+
+export const Header = () => {
+  const [isMobile, setIsMobile] = useState(() => {
+    if (typeof window !== 'undefined') {
+      return window.innerWidth < 1100;
+    }
+    return false;
+  });
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 1100);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  return isMobile ? <MobileHeader /> : <DesktopHeader />;
 };
