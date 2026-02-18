@@ -48,7 +48,6 @@ const DesignerCard = (service: Designer) => {
             <p className='mt-5 ml-5 text-sm text-[#A6A09B] font-bold'>디자이너 소개</p>
             <p className='mt-3 ml-5 text-lg text-[#44403B] font-semibold whitespace-pre-line'>{service.description}</p>
         </div>
-        <button className="px-6 py-3 mt-5 ml-5 bg-black text-white rounded-full font-semibold">예약하기</button>
     </div>
 }
 
