@@ -34,7 +34,7 @@ const services: Designer[] = [
     profile: profile5,
     title: 'profile5',
     name: '네일또와',
-    description:'* 1:1 꼼꼼한 1인샵_유지력짱\n * 젤네일 / 젤페디 전문샵\n * 10년 이상 경력의 드릴전문샵',
+    description:'* 1:1 꼼꼼한 1인샵_유지력짱\n * 젤네일 / 젤패디 전문샵\n * 10년 이상 경력의 드릴전문샵',
   },
 ];
 
