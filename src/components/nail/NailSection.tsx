@@ -19,7 +19,6 @@ const services2: Profile[] = [
   { profile:nail4, title:'nale4' },
 ]
 
-
 const NailCard = (service1: Nail) => {
   return<div className='flex items-center gap-3 mb-5'>
           <svg width="25" height="25" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
