@@ -52,7 +52,7 @@ export const NailSection = () => {
       </div>
     </div>
     <div>
-      <div className="grid grid-cols-2 gap-5 mt-20">
+      <div className="grid grid-cols-2 gap-5 mt-30">
           {services2.map((item, i) => (
             <div key={i} className={i % 2 === 1 ? "mt-5" : ""}>
               <NailProfile {...item} />
