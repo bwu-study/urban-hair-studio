@@ -40,39 +40,25 @@ const designers: Designer[] = [
   },
   {
     profile: profile5,
-    title: "profile5",
-    name: "네일또와",
-    description:
-      "* 1:1 꼼꼼한 1인샵_유지력짱\n * 젤네일 / 젤페디 전문샵\n * 10년 이상 경력의 드릴전문샵",
+    title: 'profile5',
+    name: '네일또와',
+    description:'* 1:1 꼼꼼한 1인샵_유지력짱\n * 젤네일 / 젤페디 전문샵\n * 10년 이상 경력의 드릴전문샵',
   },
 ];
 
-const DesignerCard = (designer: Designer) => {
-  return (
-    <div className="w-80">
-      <div className="w-80 h-90 overflow-hidden rounded-2xl relative">
-        <img
-          className="h-full w-full object-cover"
-          src={designer.profile}
-          alt={designer.title}
-        />
-        <div className="absolute bottom-4 left-6 text-white text-2xl font-bold">
-          {designer.name}
+const DesignerCard = (service: Designer) => {
+  return<div className="w-80">
+        <div className="w-80 h-90 overflow-hidden rounded-2xl relative">
+            <img className="h-full w-full object-cover" src={service.profile} alt={service.title} />
+            <div className='absolute bottom-4 left-6 text-white text-2xl font-bold'>{service.name}</div>
         </div>
-      </div>
-      <div>
-        <p className="mt-5 ml-5 text-sm text-[#A6A09B] font-bold">
-          디자이너 소개
-        </p>
-        <p className="mt-3 ml-5 text-lg text-[#44403B] font-semibold whitespace-pre-line">
-          {designer.description}
-        </p>
-      </div>
-      <button className="px-6 py-3 mt-5 ml-5 bg-black text-white rounded-full font-semibold">
-        예약하기
-      </button>
+        <div>
+            <p className='mt-5 ml-5 text-sm text-[#A6A09B] font-bold'>디자이너 소개</p>
+            <p className='mt-3 ml-5 text-lg text-[#44403B] font-semibold whitespace-pre-line'>{service.description}</p>
+        </div>
+        <button className="px-6 py-3 mt-5 ml-5 bg-black text-white rounded-full font-semibold">예약하기</button>
     </div>
-  );
+  ;
 };
 
 export const DesignerSection = () => {
