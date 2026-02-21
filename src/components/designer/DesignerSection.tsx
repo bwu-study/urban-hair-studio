@@ -53,11 +53,11 @@ const DesignerCard = (service: Designer) => {
 
 export const DesignerSection = () => {
   return <section className='mt-30 mb-20'>
-    <div className="w-200 h-32 ml-30">
-        <h2 className="text-5xl font-bold">Designer</h2><br />
-        <p className='text-[#79716B] text-xl'>2개 층의 광활한 공간에서 각 분야 최고의 전문성을 가진 4인의 디자이너를 만나보세요.</p>
+    <div className="w-200 max-md:w-full h-32 ml-30 max-md:ml-0">
+        <h2 className="max-md:text-center text-5xl font-bold">Designer</h2><br />
+        <p className='hidden md:block text-[#79716B] text-xl'>2개 층의 광활한 공간에서 각 분야 최고의 전문성을 가진 4인의 디자이너를 만나보세요.</p>
     </div>
-    <div className="flex gap-5 justify-center mt-10 w-full">
+    <div className="flex max-md:block gap-5 max-md:space-y-15 justify-center mt-10 max-md:mt-0 w-full max-md:max-w-sm mx-auto">
         {services.map(DesignerCard)}
     </div>
     
