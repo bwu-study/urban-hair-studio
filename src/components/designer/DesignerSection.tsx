@@ -68,9 +68,6 @@ const DesignerCard = (designer: Designer) => {
           {designer.description}
         </p>
       </div>
-      <button className="px-6 py-3 mt-5 ml-5 bg-black text-white rounded-full font-semibold">
-        예약하기
-      </button>
     </div>
   );
 };
