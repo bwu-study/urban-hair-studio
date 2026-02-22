@@ -1,17 +1,9 @@
-import { useRoutes } from 'react-router-dom';
-import { routes } from './routes/routes';
-import { Header } from './components/common/Header';
-import { Footer } from './components/common/Footer';
+import { useRoutes } from 'react-router-dom'
+import { routes } from './routes/routes'
 
 function App() {
-  const element = useRoutes(routes);
-  return (
-    <>
-      <Header />
-      {element}
-      <Footer />
-    </>
-  );
+  const element = useRoutes(routes)
+  return element
 }
 
-export default App;
+export default App
