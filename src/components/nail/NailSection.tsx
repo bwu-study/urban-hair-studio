@@ -20,7 +20,7 @@ const services2: Profile[] = [
 ]
 
 const NailCard = (service1: Nail) => {
-  return<div className='flex items-center gap-3 mb-5'>
+  return<div className='flex items-center max-md:justify-center gap-3 mb-5'>
           <svg width="25" height="25" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M9 16.5C13.1421 16.5 16.5 13.1421 16.5 9C16.5 4.85786 13.1421 1.5 9 1.5C4.85786 1.5 1.5 4.85786 1.5 9C1.5 13.1421 4.85786 16.5 9 16.5Z" stroke="#FE9A00" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
             <path d="M6.75 9L8.25 10.5L11.25 7.5" stroke="#FE9A00" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -30,31 +30,42 @@ const NailCard = (service1: Nail) => {
 }
 
 const NailProfile = (service2: Profile) => {
-  return<div className="w-70 h-90 overflow-hidden rounded-2xl relative">
+  return<div className="w-70 h-90 max-md:w-80 overflow-hidden rounded-2xl relative">
             <img className="h-full w-full object-cover" src={service2.profile} alt={service2.title} />
         </div>
 }
 
 export const NailSection = () => {
-  return <section className="flex justify-center">
-    <div className='min-h-screen flex items-center'>
-      <div className='w-230'>
-        <div className='inline-block px-4 py-2 bg-[#FFFBEB] text-[#BB4D00] rounded-full text-[10px] tracking-widest font-bold'>3RD FLOOR EXCLUSIVE</div>
+  return <section className="flex max-md:block justify-center max-md:text-center">
+    <div className='min-h-screen max-md:min-h-0 flex max-md:py-12 items-center max-md:justify-center '>
+      <div className='w-230 max-md:w-full'>
+        <div className='inline-block px-4 py-2 bg-[#FFFBEB] text-[#BB4D00] rounded-full text-[10px] max-md:text-[12px] tracking-widest font-bold'>3RD FLOOR EXCLUSIVE</div>
         <h2 className="text-5xl mt-10 mb-10">네일또와</h2>
-        <p className='mb-8'>
-          1:1로 꼼꼼하게 진행되는 프라이빗 1인샵입니다.<br/>
-          젤네일 · 젤패디 전문으로, 10년 이상의 경력을 가진 드릴 전문 네일리스트가 시술합니다.<br/>
-          헤어 시술을 받으시는 동안 또는 프라이빗하게 따로 방문하여<br/>
-          손끝의 아름다움을 완성하실 수 있는 3층 네일 전용 공간입니다.
+        <p className="mb-8 leading-relaxed">
+          {/* PC용 소개글 */}
+          <span className="hidden md:inline">
+            1:1로 꼼꼼하게 진행되는 프라이빗 1인샵입니다.<br/>
+            젤네일 · 젤패디 전문으로, 10년 이상의 경력을 가진 드릴 전문 네일리스트가 시술합니다.<br/>
+            헤어 시술을 받으시는 동안 또는 프라이빗하게 따로 방문하여<br/>
+            손끝의 아름다움을 완성하실 수 있는 3층 네일 전용 공간입니다.
+          </span>
+
+          {/* 모바일용 소개글 */}
+          <span className="md:hidden">
+            1:1로 꼼꼼하게 진행되는 프라이빗 1인샵입니다.<br/>
+            젤네일 · 젤패디 전문으로, 10년 이상의 경력을<br/>
+            가진 드릴 전문 네일리스트가 시술합니다.<br/>
+            프라이빗하게 따로 방문하여 손끝의 아름다움을<br/>
+            완성하실 수 있는 3층 네일 전용 공간입니다.
+          </span>
         </p>
         {services1.map(NailCard)}
-        <button className="px-10 py-5 mt-5 bg-black text-white rounded-full font-semibold cursor-pointer">예약하기</button>
       </div>
     </div>
     <div>
-      <div className="grid grid-cols-2 gap-5 mt-30">
+      <div className="grid grid-cols-2 max-md:grid-cols-1 gap-5 mt-30 max-md:mt-0 max-md:justify-items-center">
           {services2.map((item, i) => (
-            <div key={i} className={i % 2 === 1 ? "mt-5" : ""}>
+            <div key={i} className={i % 2 === 1 ? "mt-5 max-md:mt-0" : ""}>
               <NailProfile {...item} />
             </div>
           ))}
