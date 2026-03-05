@@ -3,19 +3,19 @@ import { MapViewSection } from "@/components/location/MapViewSection.tsx";
 
 function Location() {
   return (
-    <section className="bg-white mt-[30px]">
-      <div className="w-full">
-        <div className="flex justify-between items-start">
-          <div className="w-[45%] px-8">
+      <section className="bg-white mt-[30px]">
+        <div className="flex flex-col md:flex-row">
+
+          <div className="w-full md:w-1/2">
             <FloorInfoSection />
           </div>
 
-          <div className="w-[50%]">
+          <div className="w-full md:w-1/2">
             <MapViewSection />
           </div>
+
         </div>
-      </div>
-    </section>
+      </section>
   );
 }
 
