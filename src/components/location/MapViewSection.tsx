@@ -34,17 +34,17 @@ const MapViewCard = () => {
       const marker = new window.kakao.maps.Marker({ position: center });
       marker.setMap(map);
     }
-  }, []);
+  }, [kakaoKey]);
 
   return (
-    <div className="w-[800px] h-[592px] rounded-[43px] overflow-hidden">
+    <div className="w-[335px] h-[344px] md:w-[800px] md:h-[592px] rounded-[43px] overflow-hidden">
       <div ref={mapRef} className="w-full h-full" />
     </div>
   );
 };
 
 export const MapViewSection = () => (
-  <section className="bg-white py-[120px]">
+  <section className="bg-white py-[50px] md:py-[120px] flex justify-center">
     <MapViewCard />
   </section>
 );

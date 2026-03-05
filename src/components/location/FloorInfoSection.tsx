@@ -29,9 +29,9 @@ const information: Info[] = [
 
 const FloorCard = (floors: Floor) => {
     return (
-        <div className="flex gap-[15px] items-center">
+        <div className="flex gap-[12px] md:gap-[15px] items-start">
             {/* Floor Badge */}
-            <div className="flex items-center justify-center w-[45px] h-[48px] bg-[#FAFAF9] rounded-[20px]">
+            <div className="flex items-center justify-center w-[40px] h-[40px] md:w-[45px] md:h-[48px] bg-[#FAFAF9] rounded-[20px]">
                 <span className="font-semibold text-[16px] text-[#0A0A0A]">
                     {floors.floor}
                 </span>
@@ -39,10 +39,10 @@ const FloorCard = (floors: Floor) => {
 
             {/* Text Area */}
             <div className="flex flex-col">
-                <h4 className="text-[18px] font-bold text-[#0A0A0A] leading-[20px] tracking-[-0.44px]">
+                <h4 className="text-[14px] md:text-[18px] font-bold text-[#0A0A0A] leading-[20px] tracking-[-0.44px]">
                     {floors.title}
                 </h4>
-                <p className="text-[16px] text-[#78716C] leading-[24px] tracking-[-0.31px]">
+                <p className="text-[12px] md:text-[16px] text-[#78716C] leading-[24px] tracking-[-0.31px]">
                     {floors.summary}
                 </p>
             </div>
@@ -53,8 +53,8 @@ const FloorCard = (floors: Floor) => {
 const InfoCard = (information: Info) => {
     return (
         <div className="flex items-center gap-[16px]">
-            <img src={information.icon} alt="icon" className="w-[20px] h-[20px]" />
-            <p className="text-[16px] text-[#44403C] tracking-[-0.31px]">
+            <img src={information.icon} alt="icon" className="w-[16px] h-[16px] md:w-[20px] md:h-[20px]" />
+            <p className="text-[14px] md:text-[16px] text-[#44403C] tracking-[-0.31px]">
                 {information.information}
             </p>
         </div>
@@ -66,10 +66,10 @@ export const FloorInfoSection = () => {
     const [selected, setSelected] = useState("kakao");
 
     return (
-        <section className="bg-white py-[120px]">
-            <div className="max-w-[1200px] flex flex-col gap-[32px]">
+        <section className="bg-white pt-[50px] md:py-[120px] px-[20px]">
+            <div className="max-w-[1200px] mx-auto px-[20px] md:px-0 flex flex-col gap-[32px]">
 
-                <h2 className="text-[36px] font-serif text-[#1C1917] leading-[40px]">
+                <h2 className="text-center md:text-left text-[34px] md:text-[36px] font-serif text-[#1C1917] leading-[40px]">
                     Location & Floors
                 </h2>
 
@@ -108,7 +108,7 @@ export const FloorInfoSection = () => {
 
                     <button
                         onClick={() => setSelected("kakao")}
-                        className={`w-[288px] h-[56px] flex items-center justify-center rounded-[16px] text-[16px] font-semibold transition-colors tracking-[-0.31px]
+                        className={`w-full w-[288px] h-[56px] flex items-center justify-center rounded-[16px] text-[16px] font-semibold transition-colors tracking-[-0.31px]
                                     ${selected === "kakao"
                                         ? "bg-[#1C1917] text-white"
                                         : "bg-[#F5F5F4] text-[#1C1917]"
