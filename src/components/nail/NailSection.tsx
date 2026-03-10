@@ -30,7 +30,7 @@ const NailCard = (service1: Nail) => {
 }
 
 const NailProfile = (service2: Profile) => {
-  return<div className="w-70 h-90 max-md:w-80 overflow-hidden rounded-2xl relative">
+  return<div className="w-65 h-85 max-md:w-90 overflow-hidden rounded-2xl relative">
             <img className="h-full w-full object-cover" src={service2.profile} alt={service2.title} />
         </div>
 }
@@ -63,7 +63,7 @@ export const NailSection = () => {
       </div>
     </div>
     <div>
-      <div className="grid grid-cols-2 max-md:grid-cols-1 gap-5 mt-30 max-md:mt-0 max-md:justify-items-center">
+      <div className="grid grid-cols-2 max-md:grid-cols-1 gap-5 mt-35 max-md:mt-0 max-md:justify-items-center">
           {services2.map((item, i) => (
             <div key={i} className={i % 2 === 1 ? "mt-5 max-md:mt-0" : ""}>
               <NailProfile {...item} />

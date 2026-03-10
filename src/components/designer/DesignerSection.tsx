@@ -39,8 +39,8 @@ const services: Designer[] = [
 ];
 
 const DesignerCard = (service: Designer) => {
-  return<div className="w-80">
-        <div className="w-80 h-90 overflow-hidden rounded-2xl relative">
+  return<div className="w-80 max-md:w-full">
+        <div className="w-full h-90 overflow-hidden rounded-2xl relative">
             <img className="h-full w-full object-cover" src={service.profile} alt={service.title} />
             <div className='absolute bottom-4 left-6 text-white text-2xl font-bold'>{service.name}</div>
         </div>
